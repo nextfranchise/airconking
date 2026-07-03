@@ -1,0 +1,381 @@
+    /* ==========================================================================
+       AIRCON KING (AK) - MASTER BRAND CSS (REVISED WITH TECH GEOMETRIC BG)
+       ========================================================================== */
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,400;1,700&display=swap');
+
+    :root {
+      /* Brand Colors */
+      --brand-primary: #0085FE;         /* AK Blue - Primary */
+      --brand-primary-deep: #005BB8;    /* AK Blue - Deep (Accessible body-level blue) */
+      --brand-dark: #1A1A1A;            /* Ink / Near-Black (Body text) */
+      --brand-light: #FFFFFF;           /* Core background / Contrast text */
+      --brand-bg-offset: #F4F8FC;       /* "Kalamig" subtle cool blue background tint */
+      
+      /* Typography Scale */
+      --font-body: 'Montserrat', -apple-system, sans-serif;
+
+      /* Fluid Spacing Scale */
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+
+      /* Component Properties */
+      --border-radius: 6px;
+      --border-color: #D3E6FC;
+      --box-shadow: 0 4px 12px rgba(0, 91, 184, 0.05);
+      --transition-speed: 0.2s;
+    }
+
+    /* Base CSS Resets & Typography */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--brand-dark);
+      
+      /* Subtle technical isometric blueprint pattern for background */
+      background-color: #F4F8FC;
+      background-image: 
+        linear-gradient(30deg, rgba(0, 133, 254, 0.015) 12%, transparent 12.5%, transparent 87%, rgba(0, 133, 254, 0.015) 87.5%, rgba(0, 133, 254, 0.015)),
+        linear-gradient(150deg, rgba(0, 133, 254, 0.015) 12%, transparent 12.5%, transparent 87%, rgba(0, 133, 254, 0.015) 87.5%, rgba(0, 133, 254, 0.015)),
+        radial-gradient(circle at 10% 20%, rgba(0, 133, 254, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0, 91, 184, 0.04) 0%, transparent 50%);
+      background-size: 80px 140px, 80px 140px, 100% 100%, 100% 100%;
+      background-position: 0 0, 0 0, 0 0, 0 0;
+
+      line-height: 1.6;
+      margin: 0;
+      padding: var(--spacing-md);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Container to limit reading width on desktop */
+    .module-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--spacing-md) 0;
+    }
+
+    /* ==========================================================================
+       Component Classes
+       ========================================================================== */
+
+    /* 1. Brand Header: High-contrast, clean, and highly visible logo lockup */
+    .brand-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-lg);
+      padding: var(--spacing-md) var(--spacing-lg);
+      background-color: var(--brand-light);
+      border-bottom: 4px solid var(--brand-primary);
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-xl);
+      box-shadow: var(--box-shadow);
+    }
+
+    .brand-header-logo {
+      max-height: 56px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .brand-header-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-header-module {
+      font-family: var(--font-body);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 0;
+      color: var(--brand-primary-deep);
+    }
+
+    .brand-header-task {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-dark);
+      margin-top: var(--spacing-xs);
+    }
+
+    /* 2. Mentor Hook: "Senior Colleague" voice component with clear typography */
+    .mentor-hook {
+      background-color: var(--brand-bg-offset);
+      border-left: 4px solid var(--brand-primary);
+      padding: var(--spacing-md) var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .mentor-hook-label {
+      font-family: var(--font-body);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--brand-primary-deep);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .mentor-hook-quote {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--brand-dark);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* 3. Core Content: Main layout modified as a floating card for legibility */
+    .core-content {
+      font-size: 1rem;
+      color: var(--brand-dark);
+      background-color: var(--brand-light);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-lg);
+      box-shadow: var(--box-shadow);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .core-content p {
+      margin-top: 0;
+      margin-bottom: var(--spacing-md);
+    }
+
+    /* Section titles removed italics for clear legibility */
+    .core-content h1, 
+    .core-content h2, 
+    .core-content h3 {
+      font-family: var(--font-body);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--brand-primary-deep);
+      letter-spacing: -0.01em;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.3;
+    }
+
+    .core-content h1 { font-size: 1.75rem; }
+    .core-content h2 { font-size: 1.35rem; }
+    .core-content h3 { font-size: 1.15rem; }
+
+    .core-content ul, 
+    .core-content ol {
+      margin-top: 0;
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-lg);
+    }
+
+    .core-content li {
+      margin-bottom: var(--spacing-xs);
+    }
+
+    /* Document / SOP tables */
+    .core-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--spacing-md) 0 var(--spacing-lg) 0;
+      box-shadow: var(--box-shadow);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .core-content th {
+      background-color: var(--brand-primary-deep);
+      color: var(--brand-light);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      padding: var(--spacing-sm) var(--spacing-md);
+      text-align: left;
+    }
+
+    .core-content td {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      background-color: var(--brand-light);
+    }
+
+    /* 4. Critical Alert: Refactored clean callout layout using brand system blues */
+    .critical-alert {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-md);
+      background-color: var(--brand-bg-offset);
+      border: 1.5px solid var(--border-color);
+      border-left: 5px solid var(--brand-primary-deep);
+      color: var(--brand-dark);
+      padding: var(--spacing-md);
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-lg);
+      box-shadow: var(--box-shadow);
+    }
+
+    .critical-alert-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .critical-alert-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--brand-primary-deep);
+    }
+
+    .critical-alert-body {
+      flex-grow: 1;
+    }
+
+    .critical-alert-title {
+      font-family: var(--font-body);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--brand-primary-deep);
+      margin: 0 0 var(--spacing-xs) 0;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .critical-alert-text {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* 5. Interactive Container: Wrapper for engagement frames */
+    .interactive-container {
+      background-color: var(--brand-light);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-lg);
+      box-shadow: var(--box-shadow);
+      margin-bottom: var(--spacing-xl);
+      transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+
+    .interactive-container:hover {
+      border-color: var(--brand-primary-deep);
+      box-shadow: 0 6px 16px rgba(0, 91, 184, 0.12);
+    }
+
+    /* 6. Knowledge Check: Standardized quiz wrappers */
+    .knowledge-check {
+      background-color: var(--brand-bg-offset);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-lg);
+    }
+
+    .knowledge-check-label {
+      font-family: var(--font-body);
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: underline;
+      color: var(--brand-primary-deep);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--spacing-xs);
+      display: inline-block;
+    }
+
+    .knowledge-check-question {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--brand-dark);
+      margin-top: 0;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .knowledge-check-options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .knowledge-check-option {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: var(--spacing-md);
+      background-color: var(--brand-light);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--brand-dark);
+      text-align: left;
+      transition: background-color var(--transition-speed), border-color var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .knowledge-check-option:hover {
+      background-color: #F5FAFF;
+      border-color: var(--brand-primary);
+    }
+
+    .knowledge-check-option:focus-visible {
+      outline: 3px solid var(--brand-primary);
+      outline-offset: 2px;
+    }
+
+    .knowledge-check-option.is-selected {
+      border-color: var(--brand-primary-deep);
+      background-color: #E6F2FF;
+      font-weight: 700;
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       Responsive Adaptability (Mobile & Desktop)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      body {
+        padding: var(--spacing-sm);
+      }
+
+      .brand-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+      }
+
+      .brand-header-logo {
+        max-height: 48px;
+      }
+
+      .core-content h1 { font-size: 1.5rem; }
+      .core-content h2 { font-size: 1.25rem; }
+      .core-content h3 { font-size: 1.1rem; }
+
+      .interactive-container {
+        padding: var(--spacing-md);
+      }
+    }
+ 
